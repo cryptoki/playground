@@ -24,4 +24,13 @@ libraryDependencies ++= Seq(
   "org.scalacheck" %% "scalacheck" % "1.11.6"
 ).map(_ % "test")
 
-unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )  
+unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
+
+lazy val macros = project
+  .settings(scalaVersion := "2.11.4")
+  .settings(libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value)
+
+lazy val root =
+  project.in( file(".") )
+    .dependsOn(macros)
+
