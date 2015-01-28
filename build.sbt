@@ -6,6 +6,8 @@ scalaVersion := "2.11.4"
 
 libraryDependencies ++= Seq( jdbc , anorm , cache , ws )
 
+lazy val `playground` = (project in file(".")).enablePlugins(PlayScala)
+
 libraryDependencies ++= Seq(
   "joda-time" % "joda-time" % "2.5",
   "org.joda" % "joda-convert" % "1.7",
@@ -24,8 +26,3 @@ libraryDependencies ++= Seq(
 
 unmanagedResourceDirectories in Test <+=  baseDirectory ( _ /"target/web/public/test" )
 
-lazy val macros = project
-  .settings(scalaVersion := "2.11.4")
-  .settings(libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value)
-
-lazy val `playground` = (project in file(".")).enablePlugins(PlayScala)
