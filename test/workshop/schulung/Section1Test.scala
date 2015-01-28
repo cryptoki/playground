@@ -1,4 +1,4 @@
-package workshop
+package workshop.schulung
 
 import org.scalatest.FunSuite
 

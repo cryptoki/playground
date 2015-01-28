@@ -1,6 +1,5 @@
 import java.text.SimpleDateFormat
 import java.util.Date
-
 object MyImplicits {
   implicit def strToDate(str: String): Date = new SimpleDateFormat("yyyy-mm-dd").parse(str)
 

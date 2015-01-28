@@ -1,4 +1,4 @@
-package workshop
+package workshop.schulung
 
 object Section1 {
   def loop: Int = loop

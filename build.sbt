@@ -2,9 +2,7 @@ name := "playground"
 
 version := "1.0"
 
-lazy val `playground` = (project in file(".")).enablePlugins(PlayScala)
-
-scalaVersion := "2.11.1"
+scalaVersion := "2.11.4"
 
 libraryDependencies ++= Seq( jdbc , anorm , cache , ws )
 
@@ -30,7 +28,4 @@ lazy val macros = project
   .settings(scalaVersion := "2.11.4")
   .settings(libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value)
 
-lazy val root =
-  project.in( file(".") )
-    .dependsOn(macros)
-
+lazy val `playground` = (project in file(".")).enablePlugins(PlayScala)
