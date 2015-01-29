@@ -14,6 +14,7 @@ package workshop.projecteuler
 object Problem2 {
 
   def problem2(maximum: Int) : Long = {
-    2
+    lazy val fibs: Stream[Long] = 0 #:: 1 #:: fibs.zip(fibs.tail).map(x => x._1 + x._2)
+    fibs.takeWhile(x => x < maximum).filter( x => x%2 == 0).sum
   }
 }
