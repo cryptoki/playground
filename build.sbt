@@ -15,6 +15,13 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-actor" % "2.3.7"
 )
 
+val macwire = Seq(
+  "com.softwaremill.macwire" %% "macros",
+  "com.softwaremill.macwire" %% "runtime"
+).map(_ % "0.7.3")
+
+libraryDependencies ++= macwire
+
 resolvers += "Scalaz bintray" at "http://dl.bintray.com/scalaz/releases"
 
 libraryDependencies ++= Seq(
